@@ -1,0 +1,10 @@
+/* エラーメッセージ表示用 */
+#err_msg {
+	color      : #EF0433;
+	font-size  : 80%;
+}
+
+/* 右揃え用 */
+.right_align {
+	text-align : right;
+}

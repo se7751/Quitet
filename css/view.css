@@ -1,0 +1,224 @@
+/* 余白設定をリセット */
+* {
+	margin           : 0;
+	padding          : 0;
+}
+
+p#right_align {
+	text-align       : right;
+}
+
+p#left_align{
+	text-align       : left;
+}
+
+p#center_align {
+	text-align       : center;
+}
+
+/* 背景色 */
+body {
+	background-color : #ffffff;
+}
+
+/* リンクの配色 */
+div#header div#menu a {
+	color            : #FFFFFF;
+}
+div#wholewapper a {
+	color            : #1B5790;
+}
+div#header div#menu a:hover, 
+div#wholewapper a:hover {
+	color            : #B2D281;
+}
+
+
+
+/* ヘッダ設定 */
+div#header {
+	background-color : #1B5090;
+	
+	color            : #FFFFFF;
+	margin           : 0 auto;
+	width            : 100%;
+}
+
+div#header div#menu {
+	margin           : 10px;
+	text-align       : right;
+}
+div#header h1 {
+	padding-left     : 10px;
+	padding-top      : 10px;
+}
+
+/* フッタ設定 */
+div#footer {
+	background-color : #1B5790;
+	color            : #FFFFFF;
+	margin           : 0 auto;
+	padding          : 5px 0;
+	text-align       : right;
+	width            : 180%;
+	top: 100px;
+}
+
+/* コンテンツ設定 */
+div#wholewapper {
+	background-color : #FFFFFF;
+	font-size        : 95%;
+	margin           : 0 auto;
+	padding          : 10px 0;
+	width            : 800px;
+}
+
+div#wholewapper a.edit {
+	background       : url("../images/notebook_pencil.png") no-repeat center left;
+	padding-left     : 1.5em;
+}
+
+div#wholewapper a.delete {
+	background       : url("../images/notebook_minus.png") no-repeat center left;
+	padding-left     : 1.5em;
+}
+
+div#wholewapper a.add_comment {
+	background       : url("../images/notebook_plus.png") no-repeat center left;
+	padding-left     : 1.5em;
+}
+
+div.post {
+	border           : 1px solid #ccc;
+	margin           : 0 auto 10px auto;
+	padding          : 5px;
+	width            : 90%;
+}
+
+div.post div.body {
+	padding          : 10px;
+}
+
+div.post div.buttons {
+	font-size        : 85%;
+	text-align       : right;
+}
+
+h3.comments_header {
+	border-top       : 1px solid #ccc;
+	margin-bottom    : 10px;
+	margin-top       : 10px;
+	padding-top      : 10px;
+}
+
+div.post div.comments {
+	font-size        : small;
+	margin           : 5px auto;
+	width            : 95%;
+}
+
+div.post div.comments p {
+	padding-bottom   : 5px;
+	padding-left     : 1.5em;
+}
+
+/*edit.cssからもってきた*/
+
+/* エラーメッセージ表示用 */
+#err_msg {
+	color      : #EF0433;
+	font-size  : 80%;
+}
+
+/* 右揃え用 */
+.right_align {
+	text-align : right;
+}
+
+
+div#serch{
+	width           :400px;
+	height          :100px;
+	margin-top      :70px;
+	margin-left    :200px;
+}
+
+div#return{
+	width           :700px;
+	margin-left     :100px;
+	height          :50px;
+	
+}
+
+div#serch_label{
+	width           :200px;
+	margin-left     :100px;
+	height          :30px;
+}
+
+
+
+
+/*タブブロック作成*/
+li{
+	display:block;
+	float:left
+}
+
+div#tub{
+	height:40px;
+}
+
+
+
+.on {
+	background-color:#B2F881;
+	width           :120px;
+	height          :40px;
+	margin-right    :5px;
+	text-align     :center;
+}
+.on a{
+	text-decoration:none;
+	font-size      :20px;
+	color          :#FFFFFF;
+	display        :block;
+	margin-top     :10px;
+		
+}
+
+
+.off {
+	background-color:#B2E7FF;
+	width           :120px;
+	height          :40px;
+	margin-right    :5px;
+	text-align     :center;
+}
+.off a{
+	text-decoration:none;
+	font-size      :20px;
+	color          :#000000;
+	display        :block;
+	margin-top     :10px;
+
+}
+
+
+
+ul{
+	margin:0px;
+}
+
+.box1{
+	 height:10px;
+}
+
+.box2{
+	clear:both;
+	border-top:solid 10px #B2F881;
+	background-color: #B2F881;
+	
+	
+	
+}

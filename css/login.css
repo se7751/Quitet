@@ -1,0 +1,36 @@
+/* 右揃え用 */
+.right_align {
+	text-align       : right;
+}
+
+.left_align{
+	text-align       : left;
+}
+
+.center_align {
+	text-align       : center;
+}
+/* フォーム全体を囲む内容を指定 */
+div#wholewrapper {
+	margin           : 0 auto;
+	width            : 30%;
+}
+
+/* テーブルタグの表示方法を指定 */
+table {
+	border-collapse  : collapse;
+	border-left      : 1px solid #B2D281;
+	border-top       : 1px solid #B2D281;
+}
+table td {
+	border-bottom    : 1px solid #B2D281;
+	border-right     : 1px solid #B2D281;
+	padding          : 5px;
+}
+table th {
+	background-color : #1B5790;
+	border-bottom    : 1px solid #B2D281;
+	border-right     : 1px solid #B2D281;
+	color            : #FFFFFF;
+	padding          : 5px;
+}
