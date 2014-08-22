@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="css/login.css" type="text/css" />
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery.preventPasswordTypo.js"></script>
+        <script>
+            jQuery(function() {
+                $("#password").preventPasswordTypo(17);
+                $("#change").preventPasswordTypoOn("#password");
+            });
+        </script>
+		<title>ログイン</title>
+	</head>
+	<body>
+		<div id="wholewrapper">
+            <form action="login.php" method="post">
+                <table>
+                    <tr>
+                        <td colspan="2"><img src="images/01_brand_monster_460_280.jpg" alt="やるきの出る画像"></td>
+                    </tr>
+
+                    <tr>
+                        <th>ユーザ名</th>
+                        <td><input type="text" name="user_id" value="" /></td>
+                    </tr>
+                    <tr>
+                        <th>PASS</th>
+                        <td><input type="password" id="password" name="password" value="" /></td>
+                    </tr>
+
+
+                    <tr>
+                        <th>パスワード表示</th>
+                        <td class="center_align">
+                            <input type="checkbox" id="change" name="change" value=""/>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="2" class="right_align">
+                            <input type="submit" id="test" name="login_submit" value="ログイン" />
+                        </td>
+
+                    </tr>
+                </table>
+            </form>
+        </div>
+	</body>
+</html>
