@@ -5,27 +5,9 @@
 		<link rel="stylesheet" href="css/view.css" type="text/css" />
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/common.js"></script>
-		<link type="text/css" rel="stylesheet"
-  href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
-<script type="text/javascript"
-  src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript"
-  src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
-  <style type="text/css">
-
-#progress{
-	width: 20%;
-}
-</style>
-<script type="text/javascript">
-$(function() {
-  // 2プログレスバーを生成
-  $('#progress').progressbar({
-    value: 37,
-    max: 150
-  });
-});
-</script>
+		<link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
 		<title>投稿一覧</title>
 	</head>
 	<body>
@@ -40,7 +22,7 @@ $(function() {
 		<div id="wholewapper">
 			<!-- 新規作成　ボタン -->
 			{if ($role_flag == 2)}
-			<a href="edit.php?id={$post.id}" class="edit">プロジェクトの新規作成</a>
+			<a href="createProject.php" class="edit">プロジェクトの新規作成</a>
 			{/if}
 			<!-- projects配列から投稿内容を取り出して表示 -->
 			{foreach from=$projects item=project}
@@ -53,8 +35,8 @@ $(function() {
 						<!-- 編集　削除　ボタン(マネージャ以外表示させない) -->
 						<div class="buttons">
 						{if ($role_flag == 2)}
-							<a href="edit.php?id={$post.id}" class="edit">[編集]</a>
-								<a href="#" class="delete" onclick="del_confirm('delete.php?id={$post.id}');">[削除]</a>
+							<a href="#" class="edit">[編集]</a>
+								<a href="#" class="delete" onclick="del_confirm('#');">[削除]</a>
 						{/if}
 						</div>
 					</div>
@@ -65,7 +47,7 @@ $(function() {
 					<div class="body">
 					概要:{$project.body|nl2br}
 					</div>
-					
+
 				</div>
 			{/foreach}
 		</div>

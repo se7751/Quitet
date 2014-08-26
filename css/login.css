@@ -1,4 +1,4 @@
-/* 右揃え用 */
+
 .right_align {
 	text-align       : right;
 }
@@ -10,13 +10,11 @@
 .center_align {
 	text-align       : center;
 }
-/* フォーム全体を囲む内容を指定 */
 div#wholewrapper {
-	margin           : 0 auto;
+	margin-left:20%;
 	width            : 30%;
 }
 
-/* テーブルタグの表示方法を指定 */
 table {
 	border-collapse  : collapse;
 	border-left      : 1px solid #B2D281;

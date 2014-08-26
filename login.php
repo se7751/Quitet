@@ -43,12 +43,12 @@ if ($db->getRowCnt() <= 0) {
 
 		// セッション情報にユーザIDをセット
 		session_start();
-		$_SESSION['username'] = $row['name'];
-		var_dump($_SESSION['username']);
-        $_SESSION['user_id'] = $row['user_id'];
-        $_SESSION['role_flag'] = $row['role_flag'];
-		
-        
+		$_SESSION['username'] = $row['name'];//ヘッダに表示させるユーザー名
+        $_SESSION['user_id'] = $row['user_id'];//ログイン時のユーザID
+        $_SESSION['role_flag'] = $row['role_flag'];//権限フラグ
+        $_SESSION ['ch_project_title']="";
+
+
 		// 投稿一覧へリダイレクト
 		redirect_to_board();
 	} else {

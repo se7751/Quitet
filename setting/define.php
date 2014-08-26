@@ -20,3 +20,6 @@ define('ROGO_PATH', 'images/TUBASA.jpg');
  */
 define('URL_LOGIN', 'http://localhost/Quintet/'); // ログイン画面のURL
 define('URL_BOARD', 'http://localhost/Quintet/board.php'); // 投稿一覧のURL
+
+
+define('IMG_PATH', 'images/quintet-256.png'); // ログイン画面のパス
