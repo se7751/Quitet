@@ -1,0 +1,57 @@
+a{
+	color: #6a5acd;
+	}
+
+table{
+	width: 70%;
+	background-color: #faf0e6;
+	border: 1px solid #000000;
+}
+h2{
+	width: 70%;
+	background-color: #faf0e6;
+	border-bottom: medium solid #000000;
+}
+	
+#history{
+	width: 55%;
+	float: left;
+	border: 1px solid #000000;
+	background-color: #e0ffff;
+	}
+
+#coment{
+	height: 30%;
+	width: 30%;
+	float: left;
+	border: 1px solid #000000;
+	background-color: #e0ffff;
+	}
+
+#kome{
+	background-color: #ffffff;
+	}
+#gaiyo{
+	width: 70%;
+	border: 1px solid #000000;
+	}
+
+h3{
+	border-bottom: medium solid #000000;
+}
+
+#hyouji{
+	height: 100px;
+	}
+	
+#option{
+	margin-left: 60%;
+}
+#sc{
+	height: 350px;
+	overflow: scroll;
+	background-color: #ffffff;
+	}
+h5{
+	text-align: right;
+	}

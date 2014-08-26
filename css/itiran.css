@@ -1,0 +1,36 @@
+a{
+	text-decoration: none;
+	color: #8945de
+}
+
+.tiketo:nth-child(even){
+	background: #f0fff0;
+}
+
+.tiketo:nth-child(odd){
+	background: #ffffff
+}
+
+table{
+	background-color: #fffafa;
+}
+tbody{
+	text-align: center;
+}
+h5{
+	background: #f5f5f5;
+}
+
+#roadmap{
+	width: 65%;
+	background: #ffeeee;
+	}
+
+#sibori{
+	width: 75%;
+	background: #f5f5f5;
+	}
+
+.tiketo_speedy:nth-child(odd){
+	background: #2e0101;
+}
