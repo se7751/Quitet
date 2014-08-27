@@ -45,8 +45,6 @@
     </script>
     <script language="JavaScript" type="text/javascript">
         function moveForm( form, from_name, to_name ) {
-            alert(form);
-            alert(from_name);
         var from_options = form.elements[from_name].options;
         var to_options = form.elements[to_name].options;
 
@@ -104,7 +102,9 @@
             所属ユーザー<br />
             <select name="member" size="20" multiple>
                 {foreach from=$enable_users item=enable_user}
+                {if ($enable_user.name!= "")}
                 <option value="{$enable_user.user_id}">{$enable_user.name}
+                    {/if}
                 {/foreach}
             </select>
         </td>
@@ -115,9 +115,13 @@
         <td align="center">
             マネージャー<br />
             <select name="manager" size="20" multiple>
+                
                 {foreach from=$managers item=manager}
+                {if ($manager.name!= "")}
                 <option value="{$manager.user_id}">{$manager.name}
+                    {/if}
                 {/foreach}
+                
             </select>
         </td>
         <td>
@@ -128,7 +132,9 @@
             開発者<br />
             <select name="developer" size="20" multiple>
                 {foreach from=$developers item=developer}
+                {if ($developer.name!= "")}
                 <option value="{$developer.user_id}">{$developer.name}
+                    {/if}
                 {/foreach}
             </select>
         </td>
@@ -140,7 +146,9 @@
             協力会社<br />
             <select name="partner" size="20" multiple>
                 {foreach from=$partners item=partner}
+                {if ($partner.name!= "")}
                 <option value="{$partner.user_id}">{$partner.name}
+                    {/if}
                 {/foreach}
             </select>
         </td>
