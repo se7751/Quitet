@@ -14,10 +14,15 @@
         </div>
         <div id="tub">
         <ul>
-        <li class="on" id="protab"><a href="board.php">プロジェクト</a></li>
+        <li class="off" id="protab"><a href="board.php">プロジェクト</a></li>
+            {if (!$ch_project_id == "")}
         <li class="off" id="tickettab"><a href="viewTickets.php?project_id={$ch_project_id}">チケット</a></li>
         <li class="off" id="newtickettab"><a href="createTicket.php?project_id={$ch_project_id}">チケット作成</a></li>
-        <li class="off" id="searchtab"><a href="viewSearch.php">検索</a></li>
+            {else}
+        <li style="visibility:hidden background-color:#1B5090" class="off" id="tickettab" ><a style="visibility:hidden" href="viewTickets.php">チケット</a></li>
+        <li class="off" id="newtickettab"><a style="visibility:hidden" href="createTicket.php">チケット作成</a></li>
+            {/if}
+        <li class="on" id="searchtab"><a href="viewSearch.php">検索</a></li>
         </ul>
         </div>
         </div>

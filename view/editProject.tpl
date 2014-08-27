@@ -153,12 +153,12 @@
                 {/foreach}
             </select>
         </td>
-        <button onclick="myFunc();" id="selectest" >送信ボタン</button>
+        
         
     </tr>
         <tr>
             <td colspan="2" class="right_align">
-                <input type="button" id="entry" value="プロジェクト投稿" />
+                <button onclick="myFunc();" id="selectest" >送信ボタン</button>
             </td>
         </tr>
     </table>

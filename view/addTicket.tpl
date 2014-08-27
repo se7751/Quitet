@@ -13,9 +13,9 @@
         </div>
         <div id="tub">
         <ul>
-        <li class="on" id="protab"><a href="board.php">プロジェクト</a></li>
+        <li class="off" id="protab"><a href="board.php">プロジェクト</a></li>
         <li class="off" id="tickettab"><a href="viewTickets.php?project_id={$ch_project_id}">チケット</a></li>
-        <li class="off" id="newtickettab"><a href="createTicket.php?project_id={$ch_project_id}">チケット作成</a></li>
+        <li class="on" id="newtickettab"><a href="createTicket.php?project_id={$ch_project_id}">チケット作成</a></li>
         <li class="off" id="searchtab"><a href="viewSearch.php">検索</a></li>
         </ul>
         </div>

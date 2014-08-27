@@ -14,8 +14,8 @@
         </div>
         <div id="tub">
         <ul>
-        <li class="on" id="protab"><a href="board.php">プロジェクト</a></li>
-        <li class="off" id="tickettab"><a href="viewTickets.php?project_id={$ch_project_id}">チケット</a></li>
+        <li class="off" id="protab"><a href="board.php">プロジェクト</a></li>
+        <li class="on" id="tickettab"><a href="viewTickets.php?project_id={$ch_project_id}">チケット</a></li>
         <li class="off" id="newtickettab"><a href="createTicket.php?project_id={$ch_project_id}">チケット作成</a></li>
         <li class="off" id="searchtab"><a href="viewSearch.php">検索</a></li>
         </ul>
@@ -115,15 +115,15 @@
 </div>
 
 <br/><br/><p class="pagination">
-	<span class="current page">1</span>
-		<a href="#" class="page">2</a>
-		<a href="#" class="page">3</a>
-	<span class="spacer">...</span>
-		<a href="#" class="page">24</a>
-		<a href="#" class="next">次 ≫</a>
-	<span class="items">(1～15表示/200件)</span> <span class="per-page">1ページに: <span>15</span>,
-		<a href="#">30</a>,
-		<a href="#">50</a>
+	<span class="current page"></span>
+        {foreach from=$pageNums item=pageNum}
+		<a href="viewTickets.php?project_id={$ch_project_id}&page={$pageNum}" class="page">{$pageNum}</a>
+        {/foreach}
+	</tbody>
+	<span class="items">(1～10表示/{$total}件)</span> <span class="per-page">1ページに:
+        <a href="viewTickets.php?project_id={$ch_project_id}&limit=10">10</a>,
+		<a href="viewTickets.php?project_id={$ch_project_id}&limit=50">50</a>,
+		<a href="viewTickets.php?project_id={$ch_project_id}&limit=100">100</a>
 	</span>
 </p>
 

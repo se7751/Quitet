@@ -6,6 +6,7 @@ require_once ('class/DBManager.php');
 $userId = getUserID ();
 $db = DBManager::instance ();
 
+
 if(isset($_GET['project_id'])){
 	echo "PROJECT DELETE";
 	$query = <<<EOT

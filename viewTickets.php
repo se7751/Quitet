@@ -78,6 +78,7 @@ EOT;
 
 
 
+
 	// 選択されたプロジェクトに紐づくチケットを持ってくる。
 	$query = <<<EOT
 	SELECT
@@ -85,9 +86,29 @@ EOT;
 	FROM
 		tickets
 	where
-		tickets.project_id = '%s'
+		tickets.project_id = '%s'  LIMIT %s , %s
 EOT;
-	$query = sprintf ( $query, $_SESSION ['ch_project_id'] );
+
+
+
+
+	if(empty($_SESSION['limit'])){//なにもプリセットされてない場合
+		echo "IF1";
+		$query = sprintf ( $query, $_SESSION ['ch_project_id'],1,10);
+		$_SESSION['limit'] = 10;
+	}else if(!empty($_GET['limit'])){//limitが指定されたとき
+		echo "IF2";
+		$_SESSION['limit'] = $_GET['limit'];
+		$query = sprintf ( $query, $_SESSION ['ch_project_id'],1, $_GET['limit']);
+	}else if(!empty($_GET['page'])){//pageが指定されたとき
+		echo "IF3";
+		$npages =($_GET['page'] * $_SESSION['limit']) - ($_SESSION['limit'] -1);
+		$query = sprintf ( $query, $_SESSION ['ch_project_id'],$npages, $_SESSION['limit']);
+	}else {
+		$_SESSION['limit'] = 10;
+		$query = sprintf ( $query, $_SESSION ['ch_project_id'],1, $_SESSION['limit']);
+	}
+
 	$db->exec ( $query );
 
 	// データをフェッチ後、サニタイズ
@@ -98,8 +119,19 @@ if(empty($tickets)){
 		$tickets[0]['ticket_id'] = "";
 	}
 
+	//ページング処理は総チケット数を切り上げて
+	$i;
+	$pageNums;
+	for($i=1;$i<=ceil($total*0.1*10/$_SESSION['limit']);$i++){
+		$pageNums [$i-1]= $i;
+	}
+	if(empty($pageNums)){
+		$pageNums [0]= "";
+	}
 
-$smarty->assign ( 'title', $_SESSION ['ch_project_title']."　―　チケット一覧" );
+	$smarty->assign ( 'limit', $_SESSION['limit'] );
+	$smarty->assign ( 'pageNums', $pageNums );
+	$smarty->assign ( 'title', $_SESSION ['ch_project_title']."　―　チケット一覧" );
 $smarty->assign ( 'names', $_SESSION['username'] );
 $smarty->assign ( 'tickets', $tickets );
 $smarty->assign ( 'sintyoku', $sintyoku );
