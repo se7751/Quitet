@@ -122,7 +122,7 @@
             <select name="manager" size="20" multiple>
             	{foreach from=$managers item=manager}
                 <option value="{$manager.user_id}">{$manager.name}
-                {/foreach}
+                {/foreach}        
             </select>
         </td>
         <td>
