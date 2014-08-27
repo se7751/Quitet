@@ -83,19 +83,15 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th>ここにエラーを表示</th>
-                    </tr>
-
-                    <tr>
                         <th>プロジェクト名　</th>
                         <td>
-                            <input type="text" name="title" id="title" value="" />
+                            <input type="text" name="title" id="title" value="{$project_title}" />
                         </td>
                     </tr>
                     <tr>
                         <th>概要</th>
                         <td>
-                            <textarea name="body" id="body" cols="40" rows="8"></textarea>
+                            <textarea name="body" id="body" cols="40" rows="8">{$project_body}</textarea>
                         </td>
                     </tr>
 
