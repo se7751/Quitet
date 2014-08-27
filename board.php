@@ -153,5 +153,9 @@ if (isset ( $projects )) {
 $smarty->assign ( 'ch_project_title', "　　　　" );
 $smarty->assign ( 'title', "プロジェクト一覧" );
 $smarty->assign ( 'names', $_SESSION ['username'] );
+$_SESSION ['ch_project_title'] = "";
+$_SESSION ['ch_project_id'] ="";
+$smarty->assign ( 'ch_project_title', $_SESSION ['ch_project_title'] );
+$smarty->assign ( 'ch_project_id', $_SESSION ['ch_project_id'] );
 $smarty->display ( 'view/viewProjects.tpl' );
 ?>
