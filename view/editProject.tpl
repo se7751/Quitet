@@ -25,27 +25,28 @@
         <!-- ヘッダ -->
 	</head>
     <script type="text/javascript">
-   		var element = document.getElementById("selectest");
-		element.onclick = myFunc;
-            
-		function myFunc(){
-		var o = document.forms['newProject'].elements['member'].options;
+        var element = document.getElementById("selectest");
+        element.onclick = myFunc;
+        function myFunc(){
+        var o = document.forms['newProject'].elements['member'].options;
 
-		var v = new Array();
-		var t = new Array();
+        var v = new Array();
+        var t = new Array();
 
-		for(var i = 0; i < o.length; i++) {
-		v[i] = o[i].value;
-		t[i] = o[i].text;
-		}
+        for(var i = 0; i < o.length; i++) {
+        v[i] = o[i].value;
+        t[i] = o[i].text;
+        }
 
-		alert(v);
-		alert(t);
-		document.forms["newProject"].elements["choose"].value = v;
-		}
+        alert(v);
+        alert(t);
+        document.forms["newProject"].elements["choose"].value = v;
+        }
     </script>
     <script language="JavaScript" type="text/javascript">
         function moveForm( form, from_name, to_name ) {
+            alert(form);
+            alert(from_name);
         var from_options = form.elements[from_name].options;
         var to_options = form.elements[to_name].options;
 
@@ -69,41 +70,43 @@
         }
         }
     </script>
-	<body>
-		<form action="edit.php" id="newProject" method="post">
-			<!-- 編集対象の投稿ID -->
-			<input type="hidden" name="choose"/>
-			<table>
-				<thead>
-					<tr>
-						<td colspan="2">
-							<div id="err_msg">&nbsp;</div>
-						</td>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>ここにエラーを表示</th>
-					</tr>
+    <form action="edit.php" id="newProject" method="post">
+            <!-- 編集対象の投稿ID -->
+            <input type="hidden" name="choose"/>
+            <table>
+                <thead>
+                    <tr>
+                        <td colspan="2">
+                            <div id="err_msg">&nbsp;</div>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>ここにエラーを表示</th>
+                    </tr>
 
-					<tr>
-						<th>プロジェクト名　</th>
-						<td>
-							<input type="text" name="title" id="title" value="{$project_title}" />
-						</td>
-					</tr>
-					<tr>
-						<th>概要</th>
-						<td>
-							<textarea name="body" id="body" cols="40" rows="8">{$project_body}</textarea>
-						</td>
-					</tr>
-	<tr>
+                    <tr>
+                        <th>プロジェクト名　</th>
+                        <td>
+                            <input type="text" name="title" id="title" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>概要</th>
+                        <td>
+                            <textarea name="body" id="body" cols="40" rows="8"></textarea>
+                        </td>
+                    </tr>
+
+                    
+    <tr>
+
 <table>
     <tr>
         <td align="center">
             所属ユーザー<br />
-            <select name="enable_user" size="20" multiple>
+            <select name="member" size="20" multiple>
                 {foreach from=$enable_users item=enable_user}
                 <option value="{$enable_user.user_id}">{$enable_user.name}
                 {/foreach}
@@ -116,7 +119,7 @@
         <td align="center">
             マネージャー<br />
             <select name="manager" size="20" multiple>
-            	{foreach from=$managers item=manager}
+                {foreach from=$managers item=manager}
                 <option value="{$manager.user_id}">{$manager.name}
                 {/foreach}
             </select>
@@ -133,11 +136,11 @@
                 {/foreach}
             </select>
         </td>
-		 <td>
+         <td>
             <input type="button" value="→" onClick="moveForm(this.form, 'member', 'partner')" /><br>
             <input type="button" value="←" onClick="moveForm(this.form, 'partner', 'member')" />
         </td>
-		 <td align="center">
+         <td align="center">
             協力会社<br />
             <select name="partner" size="20" multiple>
                 {foreach from=$partners item=partner}
@@ -146,13 +149,14 @@
             </select>
         </td>
         <button onclick="myFunc();" id="selectest" >送信ボタン</button>
-	</tr>
-		<tr>
-			<td colspan="2" class="right_align">
-				<input type="button" id="entry" value="プロジェクト投稿" />
-			</td>
-		</tr>
-	</table>
-		</form>
-	</body>
+        
+    </tr>
+        <tr>
+            <td colspan="2" class="right_align">
+                <input type="button" id="entry" value="プロジェクト投稿" />
+            </td>
+        </tr>
+    </table>
+        </form>
+    </body>
 </html>
