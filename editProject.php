@@ -126,8 +126,18 @@ while ( $row = $db->fetch () ) {
 
 //で問題のユーザインサートだが、一回担当テーブルを消して
 //再度インサートがいいのかも
-
-
+if(empty($enable_user)){
+	$enable_user[0]['name'] = "";
+}
+if(empty($managers)){
+	$managers[0]['name'] = "";
+}
+if(empty($developers)){
+	$developers[0]['name'] = "";
+}
+if(empty($partners)){
+	$partners[0]['name'] = "";
+}
 
 
 
