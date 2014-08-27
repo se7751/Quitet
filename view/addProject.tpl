@@ -16,8 +16,8 @@
         <div id="tub">
         <ul>
         <li class="on" id="protab"><a href="board.php">プロジェクト</a></li>
-        <li class="off" id="tickettab"><a href="viewTickets.php">チケット</a></li>
-        <li class="off" id="newtickettab"><a href="createTicket.php">チケット作成</a></li>
+        <li style="visibility:hidden background-color:#1B5090" class="off" id="tickettab" ><a style="visibility:hidden" href="viewTickets.php">チケット</a></li>
+        <li class="off" id="newtickettab"><a style="visibility:hidden" href="createTicket.php">チケット作成</a></li>
         <li class="off" id="searchtab"><a href="viewSearch.php">検索</a></li>
         </ul>
         </div>
@@ -45,8 +45,7 @@
     </script>
     <script language="JavaScript" type="text/javascript">
         function moveForm( form, from_name, to_name ) {
-            alert(form);
-            alert(from_name);
+
         var from_options = form.elements[from_name].options;
         var to_options = form.elements[to_name].options;
 
