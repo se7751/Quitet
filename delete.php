@@ -17,7 +17,7 @@ if(isset($_GET['project_id'])){
 EOT;
 	$query = sprintf ( $query, $_GET['project_id'] );
 	$db->exec ( $query );
-	$url = sprintf('Location: %s', "viewProject.php");
+	$url = sprintf('Location: %s', "board.php");
 	header($url);
 	exit;
 }elseif (isset($_GET['ticket_id'])){
