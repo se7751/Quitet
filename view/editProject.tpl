@@ -16,8 +16,8 @@
         <div id="tub">
         <ul>
         <li class="on" id="protab"><a href="board.php">プロジェクト</a></li>
-        <li class="off" id="tickettab"><a href="viewTickets.php">チケット</a></li>
-        <li class="off" id="newtickettab"><a href="createTicket.php">チケット作成</a></li>
+        <li style="visibility:hidden background-color:#1B5090" class="off" id="tickettab" ><a style="visibility:hidden" href="viewTickets.php">チケット</a></li>
+        <li class="off" id="newtickettab"><a style="visibility:hidden" href="createTicket.php">チケット作成</a></li>
         <li class="off" id="searchtab"><a href="viewSearch.php">検索</a></li>
         </ul>
         </div>
@@ -38,8 +38,8 @@
         t[i] = o[i].text;
         }
 
-        alert(v);
-        alert(t);
+        //alert(v);
+        //alert(t);
         document.forms["newProject"].elements["choose"].value = v;
         }
     </script>
@@ -68,9 +68,10 @@
         }
         }
     </script>
-    <form action="edit.php" id="newProject" method="post">
+    <form action="excEditProject.php" id="newProject" method="post">
             <!-- 編集対象の投稿ID -->
             <input type="hidden" name="choose"/>
+            <input type="hidden" name="project_id" value="{$project_id}"/>
             <table>
                 <thead>
                     <tr>
