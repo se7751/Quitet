@@ -32,7 +32,7 @@
 		<div id="wholewapper">
 			<p id="right_align">
 			{if ($role_flag == "2")}
-				<a href="createProject.php">新しいプロジェクト</a>
+				<a href="createProject.php">新規プロジェクト</a>
 				{/if}
 			</p>
 			<!-- posts配列から投稿内容を取り出して表示 -->
