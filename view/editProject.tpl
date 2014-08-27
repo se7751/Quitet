@@ -24,9 +24,52 @@
         </div>
         <!-- ヘッダ -->
 	</head>
-	<body>
-		
+    <script type="text/javascript">
+   		var element = document.getElementById("selectest");
+		element.onclick = myFunc;
+            
+		function myFunc(){
+		var o = document.forms['newProject'].elements['member'].options;
 
+		var v = new Array();
+		var t = new Array();
+
+		for(var i = 0; i < o.length; i++) {
+		v[i] = o[i].value;
+		t[i] = o[i].text;
+		}
+
+		alert(v);
+		alert(t);
+		document.forms["newProject"].elements["choose"].value = v;
+		}
+    </script>
+    <script language="JavaScript" type="text/javascript">
+        function moveForm( form, from_name, to_name ) {
+        var from_options = form.elements[from_name].options;
+        var to_options = form.elements[to_name].options;
+
+        for(i = 0 ; i < from_options.length; i++) {
+        if(!from_options[i].selected || !from_options[i].text)
+        continue;
+
+        var addFlag = true;
+
+        for(j = 0; j < to_options.length; j++) {
+        if(to_options[j].text == from_options[i].text) {
+        addFlag = false;
+        break;
+        }
+        }
+
+        if(addFlag)
+        to_options[to_options.length] = new Option(from_options[i].text, from_options[i].value);
+        from_options[i] = null;
+        i--;
+        }
+        }
+    </script>
+	<body>
 		<form action="edit.php" id="newProject" method="post">
 			<!-- 編集対象の投稿ID -->
 			<input type="hidden" name="choose"/>
@@ -55,36 +98,7 @@
 							<textarea name="body" id="body" cols="40" rows="8">{$project_body}</textarea>
 						</td>
 					</tr>
-
-					<script language="JavaScript" type="text/javascript">
-					 <!--
-    				function moveForm( form, from_name, to_name ) {
-			        var from_options = form.elements[from_name].options;
-			        var to_options = form.elements[to_name].options;
-
-			        for(i = 0 ; i < from_options.length; i++) {
-			            if(!from_options[i].selected || !from_options[i].text)
-			                continue;
-
-			            var addFlag = true;
-
-			            for(j = 0; j < to_options.length; j++) {
-			                if(to_options[j].text == from_options[i].text) {
-			                    addFlag = false;
-			                    break;
-			                }
-			            }
-
-			            if(addFlag)
-			                to_options[to_options.length] = new Option(from_options[i].text, from_options[i].value);
-				            from_options[i] = null;
-				            i--;
-				        }
-				    }
-				    //-->
-				    </script>
 	<tr>
-
 <table>
     <tr>
         <td align="center">
@@ -132,26 +146,6 @@
             </select>
         </td>
         <button onclick="myFunc();" id="selectest" >送信ボタン</button>
-   		<script type="text/javascript">
-   		var element = document.getElementById("selectest");
-		element.onclick = myFunc;
-		function myFunc(){
-
-		var o = document.forms['newProject'].elements['member'].options;
-
-		var v = new Array();
-		var t = new Array();
-
-		for(var i = 0; i < o.length; i++) {
-		v[i] = o[i].value;
-		t[i] = o[i].text;
-		}
-
-		alert(v);
-		alert(t);
-		document.forms["newProject"].elements["choose"].value = v;
-		}
-		</script>
 	</tr>
 		<tr>
 			<td colspan="2" class="right_align">
