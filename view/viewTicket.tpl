@@ -29,7 +29,7 @@
 		<form action="editComment.php" method="post">
 
 		<div id="option">
-			<a href="#" class="project">編集</a>
+			<a href="editTicket.php?ticket_id={$ticket_id}" class="project">編集</a>
             <a href="#" class="delete" onclick="del_confirm('delete.php?ticket_id={$ticket_id}');">[削除]</a>
 		</div>
 			<input type="hidden" name="id" value="33" />
@@ -50,16 +50,20 @@
 
 					<th class="assigned-to">期日:</th>
 					<td class="assigned-to">{$tic.kijitu}</td>
-
+                    
 					<th class="a">担当者:</td>
 					<td class="assigned-to">{$tic.members}</td>
+    
+                    
 
 					<tr><th class="category">カテゴリー:</th><td class="category">{$tic.category}</td>
 					<tr><th class="fixed-version">ファイル:</th><td class="fixed-version">
-					<a href="/demo/users/3" class="user active">{$tic.file_name}</a>
+					<a href="view/{$tic.file_name}" class="user active">{$tic.file_name}</a>
 					{if ($tic.file_name != "")}
-					<input type="submit" id="entry" value="削除" /></td>
+                    <a href="#" class="delete" onclick="del_confirm('delete.php?ticket_id={$ticket_id}&file_name={$tic.file_name}');">[削除]</a>
 					{/if}
+                        <th class="a">作成者:</td>
+					<td class="assigned-to">{$tic.create_user}</td>
 					{/foreach}
 				</tr>
 			</table></br>
