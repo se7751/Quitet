@@ -110,7 +110,9 @@
             マネージャー<br />
             <select name="manager" size="20" multiple>
             	{foreach from=$managers item=manager}
+                {if ($manager.name!= "")}
                 <option value="{$manager.user_id}">{$manager.name}
+                    {/if}
                 {/foreach}
             </select>
         </td>
@@ -121,8 +123,8 @@
         <td align="center">
             開発者<br />
             <select name="developer" size="20" multiple>
-                {foreach from=$developers item=developer}
-                <option value="{$developer.user_id}">{$developer.name}
+                {foreach from=$developers item=developer}{if ($developer.name!= "")}
+                <option value="{$developer.user_id}">{$developer.name} {/if}
                 {/foreach}
             </select>
         </td>
@@ -133,8 +135,8 @@
 		 <td align="center">
             協力会社<br />
             <select name="partner" size="20" multiple>
-                {foreach from=$partners item=partner}
-                <option value="{$partner.user_id}">{$partner.name}
+                {foreach from=$partners item=partner}{if ($partner.name!= "")}
+                <option value="{$partner.user_id}">{$partner.name}{/if}
                 {/foreach}
             </select>
         </td>
