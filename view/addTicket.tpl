@@ -33,7 +33,7 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/i18n/jquery-ui-i18n.min.js"></script>
 	<body></br>
 		<h1>チケット作成</h1>
-		<form action="excCreateTicket.php" method="post" name="newProject" onSubmit="return check()">
+		<form action="excCreateTicket.php" method="post" name="newProject" onSubmit="return check()" enctype="multipart/form-data">
 		<input type="hidden" name="choose"/>
 			<!-- コメントテーブルに格納する投稿ID -->
 			<input type="hidden" name="id" value="33" />
@@ -91,7 +91,7 @@
 
 					<tr>
 						<th>ファイル</th>
-						<td><input type="file" name="file_name"></td>
+						<td><input type="file" name="upfile"></td>
 					</tr>
 
 			</table>
@@ -140,7 +140,7 @@
                 {/foreach}
             </select>
         </td>
-        <button onclick="myFunc();" id="selectest" >送信ボタン</button>
+        
    		<script type="text/javascript">
 
    		var element = document.getElementById("selectest");
@@ -164,11 +164,10 @@
 	</tr>
 		<tr>
 			<td colspan="2" class="right_align">
-				<input type="button" id="entry" value="プロジェクト投稿" />
+				<button onclick="myFunc();" id="selectest" >送信ボタン</button>
 			</td>
 		</tr>
 	</table>
-						</br><input type="submit" id="entry" value="作成" />
 		</form>
 
 
