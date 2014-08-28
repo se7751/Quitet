@@ -14,7 +14,7 @@ $state =$_POST['state'];
 $kijitu =$_POST['kijitu'];
 $priority =$_POST['priority'];
 $category =$_POST['category'];
-$file_name =$_POST['file_name'];
+$file_name =$_FILES["upfile"]["name"];
 
 // クエリを作成
 $format = <<<EOT
@@ -24,7 +24,6 @@ $format = <<<EOT
 		('%s', '%s','%s', '%s','%s', '%s','%s', '%s','%s')
 EOT;
 $query = sprintf ( $format,$toukousya_id,$insert_to_pro_id,$ticket_title,$ticket_body,$kijitu,$state,$priority,$category,$file_name );
-
 // クエリ発行
 $db->exec ( $query );
 
@@ -57,4 +56,21 @@ EOT;
 $query = sprintf($format,$ticketids[0]['ticket_id'],$tan);
 	$db->exec ( $query );
 }
+echo "UPLOAD";
+//ファイルアップロード処理
+if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
+	if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "view/" . $_FILES["upfile"]["name"])) {
+		chmod("view/" . $_FILES["upfile"]["name"], 0644);
+		echo "upload";
+	}
+}else {
+	echo "NOT UPLOAD";
+}
+
+
+
+$url = sprintf('Location: %s', "viewTickets.php?project_id=".$insert_to_pro_id);
+header($url);
+exit;
+
 ?>
