@@ -54,6 +54,15 @@ EOT;
 	}
 	}
 	*/
+	if(empty($managers)){
+		$managers [0]['name']= "";
+	}
+	if(empty($developers)){
+		$developers [0]['name']= "";
+	}
+	if(empty($partners)){
+		$partners [0]['name']= "";
+	}
 }
 
 
