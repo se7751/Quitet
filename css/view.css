@@ -1,4 +1,4 @@
-/* 余白設定をリセット */
+/* 菴咏區險ｭ螳壹ｒ繝ｪ繧ｻ繝�ヨ */
 * {
 	margin           : 0;
 	padding          : 0;
@@ -16,29 +16,29 @@ p#center_align {
 	text-align       : center;
 }
 
-/* 背景色 */
+/* 閭梧勹濶ｲ */
 body {
 	background-color : #ffffff;
 }
 
-/* リンクの配色 */
+/* 繝ｪ繝ｳ繧ｯ縺ｮ驟崎牡 */
 div#header div#menu a {
 	color            : #FFFFFF;
 }
 div#wholewapper a {
 	color            : #1B5790;
 }
-div#header div#menu a:hover, 
+div#header div#menu a:hover,
 div#wholewapper a:hover {
 	color            : #B2D281;
 }
 
 
 
-/* ヘッダ設定 */
+/* 繝倥ャ繝�ｨｭ螳�*/
 div#header {
 	background-color : #1B5090;
-	
+
 	color            : #FFFFFF;
 	margin           : 0 auto;
 	width            : 100%;
@@ -53,18 +53,18 @@ div#header h1 {
 	padding-top      : 10px;
 }
 
-/* フッタ設定 */
+/* 繝輔ャ繧ｿ險ｭ螳�*/
 div#footer {
 	background-color : #1B5790;
 	color            : #FFFFFF;
 	margin           : 0 auto;
 	padding          : 5px 0;
 	text-align       : right;
-	width            : 180%;
+	width            : 100%;
 	top: 100px;
 }
 
-/* コンテンツ設定 */
+/* 繧ｳ繝ｳ繝�Φ繝�ｨｭ螳�*/
 div#wholewapper {
 	background-color : #FFFFFF;
 	font-size        : 95%;
@@ -122,15 +122,15 @@ div.post div.comments p {
 	padding-left     : 1.5em;
 }
 
-/*edit.cssからもってきた*/
+/*edit.css縺九ｉ繧ゅ▲縺ｦ縺阪◆*/
 
-/* エラーメッセージ表示用 */
+/* 繧ｨ繝ｩ繝ｼ繝｡繝�そ繝ｼ繧ｸ陦ｨ遉ｺ逕ｨ */
 #err_msg {
 	color      : #EF0433;
 	font-size  : 80%;
 }
 
-/* 右揃え用 */
+/* 蜿ｳ謠�∴逕ｨ */
 .right_align {
 	text-align : right;
 }
@@ -147,7 +147,7 @@ div#return{
 	width           :700px;
 	margin-left     :100px;
 	height          :50px;
-	
+
 }
 
 div#serch_label{
@@ -159,7 +159,7 @@ div#serch_label{
 
 
 
-/*タブブロック作成*/
+/*繧ｿ繝悶ヶ繝ｭ繝�け菴懈�*/
 li{
 	display:block;
 	float:left
@@ -184,7 +184,7 @@ div#tub{
 	color          :#FFFFFF;
 	display        :block;
 	margin-top     :10px;
-		
+
 }
 
 
@@ -218,7 +218,7 @@ ul{
 	clear:both;
 	border-top:solid 10px #B2F881;
 	background-color: #B2F881;
-	
-	
-	
+
+
+
 }
