@@ -38,8 +38,6 @@
 		t[i] = o[i].text;
 		}
 
-		alert(v);
-		alert(t);
 		document.forms["newProject"].elements["choose"].value = v;
 		}
     </script>
