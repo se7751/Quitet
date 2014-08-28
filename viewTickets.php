@@ -94,21 +94,23 @@ EOT;
 
 	if(empty($_SESSION['limit'])){//なにもプリセットされてない場合
 		echo "IF1";
-		$query = sprintf ( $query, $_SESSION ['ch_project_id'],1,10);
+		$query = sprintf ( $query, $_SESSION ['ch_project_id'],0,10);
 		$_SESSION['limit'] = 10;
 	}else if(!empty($_GET['limit'])){//limitが指定されたとき
 		echo "IF2";
 		$_SESSION['limit'] = $_GET['limit'];
-		$query = sprintf ( $query, $_SESSION ['ch_project_id'],1, $_GET['limit']);
+		$query = sprintf ( $query, $_SESSION ['ch_project_id'],0, $_GET['limit']);
 	}else if(!empty($_GET['page'])){//pageが指定されたとき
 		echo "IF3";
-		$npages =($_GET['page'] * $_SESSION['limit']) - ($_SESSION['limit'] -1);
+		//2*10 - 10-1
+		//20 - 9
+		//11
+		$npages =($_GET['page'] * $_SESSION['limit']) - ($_SESSION['limit']);
 		$query = sprintf ( $query, $_SESSION ['ch_project_id'],$npages, $_SESSION['limit']);
 	}else {
 		$_SESSION['limit'] = 10;
-		$query = sprintf ( $query, $_SESSION ['ch_project_id'],1, $_SESSION['limit']);
+		$query = sprintf ( $query, $_SESSION ['ch_project_id'],0, $_SESSION['limit']);
 	}
-
 	$db->exec ( $query );
 
 	// データをフェッチ後、サニタイズ
@@ -129,9 +131,9 @@ if(empty($tickets)){
 		$pageNums [0]= "";
 	}
 
-	$smarty->assign ( 'limit', $_SESSION['limit'] );
-	$smarty->assign ( 'pageNums', $pageNums );
-	$smarty->assign ( 'title', $_SESSION ['ch_project_title']."　―　チケット一覧" );
+$smarty->assign ( 'limit', $_SESSION['limit'] );
+$smarty->assign ( 'pageNums', $pageNums );
+$smarty->assign ( 'title', $_SESSION ['ch_project_title']."　―　チケット一覧" );
 $smarty->assign ( 'names', $_SESSION['username'] );
 $smarty->assign ( 'tickets', $tickets );
 $smarty->assign ( 'sintyoku', $sintyoku );
