@@ -48,7 +48,6 @@ $db->exec ( $query );
 $tmp = "";
 while ( $row = $db->fetch () ) {
 	$tmp [] = sanitate ( $row );
-	var_dump($row);
 }
 $k = 0;
 $temp = "";
@@ -95,6 +94,27 @@ while ( $row = $db->fetch () ) {
 if(empty($comennts)){
 	$comennts[0]['comennt_id'] = "";
 }
+//チケットの作成者を持ってくる処理
+$query = <<<EOT
+	SELECT
+		users.name
+	FROM
+		tickets,users
+	WHERE
+		tickets.user_id = users.user_id and
+		tickets.ticket_id = '%s'
+EOT;
+$query = sprintf ( $query, $ch_ticket_id );
+// 実行
+$db->exec ( $query );
+// データをフェッチ後、サニタイズ
+$tmp = "";
+while ( $row = $db->fetch () ) {
+	$tmp [] = sanitate ( $row );
+}
+$ticket[0]['create_user']=$tmp[0]['name'];
+
+
 $smarty->assign ( 'title', $tit);
 $smarty->assign ( 'ticket_id', $id);
 $smarty->assign ( 'names', $_SESSION['username'] );
