@@ -30,18 +30,21 @@
     </head>
     <div id="wholewapper">
         <div id="serch" class="font">
-            <td>検索ワード</th><td><input type="textbox" value=""></td>
-            <td><input type="button" value="検索"></td>
+            <form action="viewSearch.php" id="newProject" method="post">
+            <td>検索ワード</th><td><input type="textbox" value="" name="word"></td>
+            <td><input type="submit" value="検索"></td>
+            </form>
 
 
 
             </div>
 
             <div id="serch_label" class="font">
-            <th>プロジェクト・チケット一覧</th>
 
             <div>
-            <th>○○件ヒット</th>
+                {if ($restotal != "")}
+                
+            <th>{$restotal}件ヒット</th>{/if}
             </div>
             </div>	
             </br>
@@ -51,9 +54,15 @@
             <tr>
             <th>プロジェクト名</th><th>チケット名</th><th>概要</th>
             </tr>
-            <tr>
-            <th><a href="#">プロジェクト</a><!--ここにプロジェクト・チケットを表示--></th><th>aaaaaaaa</th><th>aaaaaaaa</th>
+                {foreach from=$results item=res}
+						{if ($res.ticket_id != "")}
+            <tr> 
+            <th><a href="#">{$res.project_title}</a><!--ここにプロジェクト・チケットを表示--></th>
+            <th><a href="viewTicket.php?ticket_id={$res.ticket_id}">{$res.title}</a></th>
+            <th>{$res.body}</th>
             </tr>
+                {/if}
+                {/foreach}
             </table>
             </div>
 
