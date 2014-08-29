@@ -27,7 +27,7 @@
     </head>
     <body></br>
 		<form action="editComment.php" method="post">
-
+            </form>
 		<div id="option">
 			<a href="editTicket.php?ticket_id={$ticket_id}" class="project">編集</a>
             <a href="#" class="delete" onclick="del_confirm('delete.php?ticket_id={$ticket_id}');">[削除]</a>
@@ -80,17 +80,18 @@
 
 	<!-- 投稿欄 -->
 			<div id="history">
-				<h3>投稿欄</h3>
+				<h3>コメント</h3>
 					<div id="sc">
 						{foreach from=$comments item=com}
 						{if ($com.comennt_id != "")}
-						<h4>投稿者:<a href="/demo/users/3" class="user active">{$com.name}</a></h4>
+						<h4>投稿者:<a href="#" class="user active">{$com.name}</a></h4>
 						<p>{$com.comment}</p><h5>投稿日時：{$com.created}</h5>
-						<a href="/demo/users/3" class="user active">{$com.file_name}</a>
-						{if ($com.file_name != "")}
-						<input type="submit" id="entry" value="削除" /></td>
-						{/if}
-						<hr>
+						<a href="view/{$com.file_name}" class="user active">{$com.file_name}</a>
+					{if ($com.file_name != "")}
+                    <a href="#" class="delete" onclick="del_confirm('delete.php?ticket_id={$ticket_id}&file_name={$com.file_name}&comment_id={$com.comennt_id}');">[削除]</a>
+					{/if}<br/><a href="#" class="delete" onclick="del_confirm('delete.php?ticket_id={$ticket_id}&comment_id={$com.comennt_id}');">[コメントを削除]</a>
+						
+                <hr>
 						{/if}
 						{/foreach}
 					</div>
@@ -105,11 +106,14 @@
 			<div id="coment">
 				<h3>コメント投稿</h3>
 					<div id="kome">
-						<textarea name="body" id="body" cols="30" rows="8">aiueo</textarea><br>
-								<pre>ファイル<input type="file" name="example1"></pre>
+                        <form action="excAddComments.php" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="ticket_id" value="{$ticket_id}" />
+						<textarea name="body" id="body" cols="30" rows="8"></textarea><br>
+								<pre>ファイル<input type="file" name="upfile"></pre>
 								<input type="submit" id="entry" value="送信" />
+                        </form>
 					</div>
 			</div>
-		</form>
+		
 	</body>
 </html>
