@@ -47,6 +47,9 @@ if ($db->getRowCnt() <= 0) {
         $_SESSION['user_id'] = $row['user_id'];//ログイン時のユーザID
         $_SESSION['role_flag'] = $row['role_flag'];//権限フラグ
         $_SESSION ['ch_project_title']="";
+        $_SESSION['sort']="ticket_id";
+        $_SESSION['sort_order']="asc";
+        $_SESSION['flag']=0;
 
 
 		// 投稿一覧へリダイレクト
