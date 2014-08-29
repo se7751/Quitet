@@ -41,13 +41,7 @@
             <th>プロジェクト・チケット一覧</th>
 
             <div>
-            <th>○○件ヒット</th> <th>表示件数</th> 
-            <th><select name="example">
-            <option value="10件">10件</option>
-            <option value="20件">20件</option>
-            <option value="30件">30件</option>
-            </select>
-            </th>
+            <th>○○件ヒット</th>
             </div>
             </div>	
             </br>
@@ -55,18 +49,12 @@
 
             <table border="1">
             <tr>
-            <th>タイトル</th><th>概要</th>
+            <th>プロジェクト名</th><th>チケット名</th><th>概要</th>
             </tr>
             <tr>
-            <th><a href="チケット一覧.html">プロジェクト</a><!--ここにプロジェクト・チケットを表示--></th><th>ああああああああああああああ</th>
+            <th><a href="#">プロジェクト</a><!--ここにプロジェクト・チケットを表示--></th><th>aaaaaaaa</th><th>aaaaaaaa</th>
             </tr>
             </table>
-
-
-            <p id="right_align">
-            <div id="page"><a href="">1</a><a href="">⇒</a>
-            </div></p>
-
             </div>
 
 
