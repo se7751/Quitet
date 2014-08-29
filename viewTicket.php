@@ -12,6 +12,32 @@ $ch_ticket_id = $_GET['ticket_id'];
 $_SESSION['ch_ticket_id']=$ch_ticket_id;
 
 
+//チケットidを所持するproject_idとnameを持ってくる
+$query = <<<EOT
+	SELECT
+		projects.project_id,
+		projects.title
+	FROM
+		projects,tickets
+	WHERE
+		projects.project_id = tickets.project_id and
+		tickets.ticket_id = '%s'
+EOT;
+$query = sprintf ( $query, $ch_ticket_id );
+$db->exec ( $query );
+
+// データをフェッチ後、サニタイズ
+while ( $row = $db->fetch () ) {
+
+	$projects [] = sanitate ( $row );
+}
+
+
+$_SESSION ['ch_project_id'] = $projects [0]['project_id'];
+$_SESSION ['ch_project_title'] = $projects [0]['title'];
+
+
+
 //チケットの中身を持ってくる処理
 $query = <<<EOT
 	SELECT
@@ -120,7 +146,6 @@ $smarty->assign ( 'ticket_id', $id);
 $smarty->assign ( 'names', $_SESSION['username'] );
 $smarty->assign ( 'comments', $comennts );
 $smarty->assign ( 'ticket', $ticket );
-$smarty->assign ( 'ch_project_title', $_SESSION ['ch_project_title'] );
 $smarty->assign ( 'ch_project_title', $_SESSION ['ch_project_title'] );
 $smarty->assign ( 'ch_project_id', $_SESSION ['ch_project_id'] );
 $smarty->display ( 'view/viewTicket.tpl' );
