@@ -28,28 +28,23 @@
         </div>
         <!-- ヘッダ -->
     </head>
+    <body>
     <div id="wholewapper">
         <div id="serch" class="font">
             <form action="viewSearch.php" id="newProject" method="post">
             <td>検索ワード</th><td><input type="textbox" value="" name="word"></td>
             <td><input type="submit" value="検索"></td>
             </form>
-
-
-
-            </div>
-
-            <div id="serch_label" class="font">
-
+        </div>
+        <div id="serch_label" class="font">
             <div>
                 {if ($restotal != "")}
                 
             <th>{$restotal}件ヒット</th>{/if}
             </div>
-            </div>	
+        </div>	
             </br>
-            <div id="return">
-
+       
             <table border="1">
             <tr>
             <th>プロジェクト名</th><th>チケット名</th><th>概要</th>
@@ -64,17 +59,12 @@
                 {/if}
                 {/foreach}
             </table>
-            </div>
-
-
-
-
-            </div>
-
-
-
-			<!-- フッダ -->
-		<div id="footer">
-			&copy; sample
-		</div>
+    
+    </div>
+    
+    <!-- フッダ -->
+    <div id="footer">
+    &copy; sample
+    </div>
+</body>
 </html>
