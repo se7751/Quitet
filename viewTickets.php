@@ -13,10 +13,8 @@ $_SESSION['flag']=1;
 //ソート機能
 if(isset($_GET['sort'])){//値があった場合
 	if($_SESSION['sort_order' ]== "desc"){
-		echo "asc sort";
 		$_SESSION['sort_order']="asc";
 	}elseif($_SESSION['sort_order']=="asc"){
-		echo "desc sort";
 		$_SESSION['sort_order']="desc";
 	}
 	$_SESSION['sort']=$_GET['sort'];
@@ -128,7 +126,6 @@ EOT;
 		$_SESSION['limit'] = 10;
 		$query = sprintf ( $query, $_SESSION ['ch_project_id'],$_SESSION['sort'],$_SESSION['sort_order'],0, $_SESSION['limit']);
 	}
-	var_dump($query);
 	$db->exec ( $query );
 
 	// データをフェッチ後、サニタイズ
