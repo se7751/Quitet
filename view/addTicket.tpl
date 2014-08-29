@@ -71,7 +71,7 @@
 							<option value="通常">通常</option>
 							<option value="至急">至急</option>
 							<option value="高">高</option>
-							<option value="低"></option>
+							<option value="低">低</option>
 							</select>
 						</td>
 					</tr>
