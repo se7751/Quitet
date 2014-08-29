@@ -87,11 +87,11 @@
 			<br/><h5>{$ch_project_title} チケット一覧</h5>
 			<table width="80%" class="list_issues">
 			<tr>
-				<th title="並び替え &quot;#&quot;"><a href="#" class="sort desc">ID</a></th>
-				<th title="並び替え &quot;ステータス&quot;"><a href="#">ステータス</a></th>
-				<th title="並び替え &quot;優先度&quot;"><a href="#">優先度</a></th>
-				<th title="並び替え &quot;タイトル&quot;"><a href="#">タイトル</a></th>
-				<th title="並び替え &quot;期日&quot;"><a href="#">期日</a></th>
+				<th title="並び替え &quot;#&quot;"><a href="viewTickets.php?project_id={$ch_project_id}&sort=ticket_id" class="sort desc">ID</a></th>
+				<th title="並び替え &quot;ステータス&quot;"><a href="viewTickets.php?project_id={$ch_project_id}&sort=state">ステータス</a></th>
+				<th title="並び替え &quot;優先度&quot;"><a href="viewTickets.php?project_id={$ch_project_id}&sort=priority">優先度</a></th>
+				<th title="並び替え &quot;タイトル&quot;"><a href="viewTickets.php?project_id={$ch_project_id}&sort=title">タイトル</a></th>
+				<th title="並び替え &quot;期日&quot;"><a href="viewTickets.php?project_id={$ch_project_id}&sort=kijitu">期日</a></th>
 			</tr>
 
 	<tbody>

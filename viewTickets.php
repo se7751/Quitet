@@ -8,6 +8,23 @@ $db = DBManager::instance ();
 
 $_SESSION ['ch_project_id'] = $_GET ['project_id'];
 
+
+$_SESSION['flag']=1;
+//ソート機能
+if(isset($_GET['sort'])){//値があった場合
+	if($_SESSION['sort_order' ]== "desc"){
+		echo "asc sort";
+		$_SESSION['sort_order']="asc";
+	}elseif($_SESSION['sort_order']=="asc"){
+		echo "desc sort";
+		$_SESSION['sort_order']="desc";
+	}
+	$_SESSION['sort']=$_GET['sort'];
+}
+
+
+
+
 // プロジェクト表示用にプロジェクト名を持ってくる
 $query = <<<EOT
 	SELECT
@@ -86,7 +103,7 @@ EOT;
 	FROM
 		tickets
 	where
-		tickets.project_id = '%s'  LIMIT %s , %s
+		tickets.project_id = '%s' order by %s %s LIMIT %s , %s
 EOT;
 
 
@@ -94,23 +111,24 @@ EOT;
 
 	if(empty($_SESSION['limit'])){//なにもプリセットされてない場合
 		echo "IF1";
-		$query = sprintf ( $query, $_SESSION ['ch_project_id'],0,10);
+		$query = sprintf ( $query, $_SESSION ['ch_project_id'],$_SESSION['sort'],$_SESSION['sort_order'],0,10);
 		$_SESSION['limit'] = 10;
 	}else if(!empty($_GET['limit'])){//limitが指定されたとき
 		echo "IF2";
 		$_SESSION['limit'] = $_GET['limit'];
-		$query = sprintf ( $query, $_SESSION ['ch_project_id'],0, $_GET['limit']);
+		$query = sprintf ( $query, $_SESSION ['ch_project_id'],$_SESSION['sort'],$_SESSION['sort_order'],0, $_GET['limit']);
 	}else if(!empty($_GET['page'])){//pageが指定されたとき
 		echo "IF3";
 		//2*10 - 10-1
 		//20 - 9
 		//11
 		$npages =($_GET['page'] * $_SESSION['limit']) - ($_SESSION['limit']);
-		$query = sprintf ( $query, $_SESSION ['ch_project_id'],$npages, $_SESSION['limit']);
+		$query = sprintf ( $query, $_SESSION ['ch_project_id'],$_SESSION['sort'],$_SESSION['sort_order'],$npages, $_SESSION['limit']);
 	}else {
 		$_SESSION['limit'] = 10;
-		$query = sprintf ( $query, $_SESSION ['ch_project_id'],0, $_SESSION['limit']);
+		$query = sprintf ( $query, $_SESSION ['ch_project_id'],$_SESSION['sort'],$_SESSION['sort_order'],0, $_SESSION['limit']);
 	}
+	var_dump($query);
 	$db->exec ( $query );
 
 	// データをフェッチ後、サニタイズ
@@ -130,6 +148,9 @@ if(empty($tickets)){
 	if(empty($pageNums)){
 		$pageNums [0]= "";
 	}
+
+
+
 
 $smarty->assign ( 'limit', $_SESSION['limit'] );
 $smarty->assign ( 'pageNums', $pageNums );
