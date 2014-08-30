@@ -14,8 +14,7 @@ h2{
 }
 
 #history{
-	width: 55%;
-
+	width: 40%;
 	float:left;
 	border: 1px solid #000000;
 	background-color: #e0ffff;
@@ -25,7 +24,6 @@ h2{
 	float:left;
 	height: 30%;
 	width: 30%;
-
 	border: 1px solid #000000;
 	background-color: #e0ffff;
 	}
