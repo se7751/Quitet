@@ -129,6 +129,6 @@
 
 			<!-- フッダ -->
 		<div id="footer">
-			&copy; sample
+			&copy; Quintet
 		</div>
 </html>

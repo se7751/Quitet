@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head> 
+    <head>
         <meta charset="UTF-8" />
 		<link rel="stylesheet" href="css/view.css" type="text/css" />
 		<link rel="stylesheet" href="css/itiran.css" type="text/css" />
@@ -129,6 +129,6 @@
 
 			<!-- フッダ -->
 		<div id="footer">
-			&copy; sample
+			&copy; Quintet
 		</div>
 </html>

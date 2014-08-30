@@ -192,7 +192,7 @@
 
 			<!-- フッダ -->
 		<div id="footer">
-			&copy; sample
+			&copy; Quintet
 		</div>
 <script type="text/javascript">
         $(function() {

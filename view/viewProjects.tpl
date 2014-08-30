@@ -25,7 +25,7 @@
         <!-- ヘッダ -->
 	</head>
 	<body>
-    
+
 
 
 		<!-- コンテンツ -->
@@ -37,6 +37,7 @@
 			</p>
 			<!-- posts配列から投稿内容を取り出して表示 -->
 			{foreach from=$projects item=project}
+			{if ($project.project_id != "")}
 				<div class="post">
 					<!-- 投稿タイトル -->
 					<div class="title">
@@ -62,11 +63,23 @@
 
 
 				</div>
+				{else}
+				<div class="post">
+					<!-- 投稿タイトル -->
+					<div class="title">
+						<h2>表示できるプロジェクトがありません</h2>
+						<div class="buttons">
+						     <!-- 投稿本文 -->
+
+						</div>
+					</div>
+				</div>
+				{/if}
 			{/foreach}
 		</div>
 		<!-- フッタ -->
 		<div id="footer">
-			&copy; sample
+			&copy; Quintet
 		</div>
 	</body>
 </html>
