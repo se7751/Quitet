@@ -59,7 +59,7 @@
 						<th>カテゴリー</th>
 						<td>
 							<select name="category">
-                            <option value="新規">{$tic.category}</option>
+                            <option value="{$tic.category}">{$tic.category}</option>
                             <option value="">-----</option>
 							<option value="要件定義">要件定義</option>
 							<option value="設計">設計</option>
@@ -74,7 +74,7 @@
 						<th>優先度</th>
 						<td>
 							<select name="priority">
-                            <option value="新規">{$tic.priority}</option>
+                            <option value="{$tic.priority}">{$tic.priority}</option>
                             <option value="">-----</option>
 							<option value="通常">通常</option>
 							<option value="至急">至急</option>
