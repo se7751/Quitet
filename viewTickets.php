@@ -108,15 +108,12 @@ EOT;
 
 
 	if(empty($_SESSION['limit'])){//なにもプリセットされてない場合
-		echo "IF1";
 		$query = sprintf ( $query, $_SESSION ['ch_project_id'],$_SESSION['sort'],$_SESSION['sort_order'],0,10);
 		$_SESSION['limit'] = 10;
 	}else if(!empty($_GET['limit'])){//limitが指定されたとき
-		echo "IF2";
 		$_SESSION['limit'] = $_GET['limit'];
 		$query = sprintf ( $query, $_SESSION ['ch_project_id'],$_SESSION['sort'],$_SESSION['sort_order'],0, $_GET['limit']);
 	}else if(!empty($_GET['page'])){//pageが指定されたとき
-		echo "IF3";
 		//2*10 - 10-1
 		//20 - 9
 		//11

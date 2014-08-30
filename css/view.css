@@ -1,4 +1,4 @@
-/* 菴咏區險ｭ螳壹ｒ繝ｪ繧ｻ繝�ヨ */
+/* 闖ｴ蜥丞項髫ｪ�ｭ陞ｳ螢ｹ�堤ｹ晢ｽｪ郢ｧ�ｻ郢晢ｿｽ繝ｨ */
 * {
 	margin           : 0;
 	padding          : 0;
@@ -16,12 +16,12 @@ p#center_align {
 	text-align       : center;
 }
 
-/* 閭梧勹濶ｲ */
+/* 髢ｭ譴ｧ蜍ｹ豼ｶ�ｲ */
 body {
 	background-color : #ffffff;
 }
 
-/* 繝ｪ繝ｳ繧ｯ縺ｮ驟崎牡 */
+/* 郢晢ｽｪ郢晢ｽｳ郢ｧ�ｯ邵ｺ�ｮ鬩溷ｴ守横 */
 div#header div#menu a {
 	color            : #FFFFFF;
 }
@@ -35,7 +35,7 @@ div#wholewapper a:hover {
 
 
 
-/* 繝倥ャ繝�ｨｭ螳�*/
+/* 郢晏�繝｣郢晢ｿｽ�ｨ�ｭ陞ｳ�ｽ*/
 div#header {
 	background-color : #1B5090;
 
@@ -53,7 +53,7 @@ div#header h1 {
 	padding-top      : 10px;
 }
 
-/* 繝輔ャ繧ｿ險ｭ螳�*/
+/* 郢晁ｼ斐Ε郢ｧ�ｿ髫ｪ�ｭ陞ｳ�ｽ*/
 div#footer {
 	background-color : #1B5790;
 	color            : #FFFFFF;
@@ -64,7 +64,7 @@ div#footer {
 	top: 100px;
 }
 
-/* 繧ｳ繝ｳ繝�Φ繝�ｨｭ螳�*/
+/* 郢ｧ�ｳ郢晢ｽｳ郢晢ｿｽﾎｦ郢晢ｿｽ�ｨ�ｭ陞ｳ�ｽ*/
 div#wholewapper {
 	background-color : #FFFFFF;
 	font-size        : 95%;
@@ -122,15 +122,15 @@ div.post div.comments p {
 	padding-left     : 1.5em;
 }
 
-/*edit.css縺九ｉ繧ゅ▲縺ｦ縺阪◆*/
+/*edit.css邵ｺ荵晢ｽ臥ｹｧ繧�夢邵ｺ�ｦ邵ｺ髦ｪ笳�/
 
-/* 繧ｨ繝ｩ繝ｼ繝｡繝�そ繝ｼ繧ｸ陦ｨ遉ｺ逕ｨ */
+/* 郢ｧ�ｨ郢晢ｽｩ郢晢ｽｼ郢晢ｽ｡郢晢ｿｽ縺晉ｹ晢ｽｼ郢ｧ�ｸ髯ｦ�ｨ驕会ｽｺ騾包ｽｨ */
 #err_msg {
 	color      : #EF0433;
 	font-size  : 80%;
 }
 
-/* 蜿ｳ謠�∴逕ｨ */
+/* 陷ｿ�ｳ隰�ｿｽ竏ｴ騾包ｽｨ */
 .right_align {
 	text-align : right;
 }
@@ -159,7 +159,7 @@ div#serch_label{
 
 
 
-/*繧ｿ繝悶ヶ繝ｭ繝�け菴懈�*/
+/*郢ｧ�ｿ郢晄じ繝ｶ郢晢ｽｭ郢晢ｿｽ縺題抄諛茨ｿｽ*/
 li{
 	display:block;
 	float:left

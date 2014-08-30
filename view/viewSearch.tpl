@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head> 
+    <head>
         <meta charset="UTF-8" />
 		<link rel="stylesheet" href="css/view.css" type="text/css" />
 		<link rel="stylesheet" href="css/itiran.css" type="text/css" />
@@ -29,7 +29,7 @@
         <!-- ヘッダ -->
     </head>
     <body>
-    <div id="wholewapper">
+    <div id="wholewappers">
         <div id="serch" class="font">
             <form action="viewSearch.php" id="newProject" method="post">
             <td>検索ワード</th><td><input type="textbox" value="" name="word"></td>
@@ -39,19 +39,19 @@
         <div id="serch_label" class="font">
             <div>
                 {if ($restotal != "")}
-                
+
             <th>{$restotal}件ヒット</th>{/if}
             </div>
-        </div>	
+        </div>
             </br>
-       
-            <table border="1">
+		<div id="rest">
+            <table border="1" id="restable">
             <tr>
             <th>プロジェクト名</th><th>チケット名</th><th>概要</th>
             </tr>
                 {foreach from=$results item=res}
 						{if ($res.ticket_id != "")}
-            <tr> 
+            <tr>
             <th><a href="#">{$res.project_title}</a><!--ここにプロジェクト・チケットを表示--></th>
             <th><a href="viewTicket.php?ticket_id={$res.ticket_id}">{$res.title}</a></th>
             <th>{$res.body}</th>
@@ -59,9 +59,10 @@
                 {/if}
                 {/foreach}
             </table>
-    
+           </div>
+
     </div>
-    
+
     <!-- フッダ -->
     <div id="footer">
     &copy; Quintet

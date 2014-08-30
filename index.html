@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="css/login.css" type="text/css" />
+		<link rel="stylesheet" href="css/view.css" type="text/css" />
+		<link rel="stylesheet" href="css/itiran.css" type="text/css" />
         <script src="js/jquery.js"></script>
         <script src="js/jquery.preventPasswordTypo.js"></script>
         <script>
@@ -11,7 +13,27 @@
                 $("#change").preventPasswordTypoOn("#password");
             });
         </script>
+        <style type="text/css">
+
+.off { visibility: hidden; }
+.on { visibility: hidden; }
+</style>
+
 		<title>ログイン</title>
+		<!-- ヘッダ -->
+        <div id="header">
+        <h1>　　　　</h1>
+
+        <div id="tub">
+        <ul>
+        <li class="off" id="protab" ><a href="board.php">プロジェクト</a></li>
+        <li class="off" id="tickettab"><a href="viewTickets.php?project_id={$ch_project_id}">チケット</a></li>
+        <li class="on" id="newtickettab"><a href="createTicket.php?project_id={$ch_project_id}">チケット作成</a></li>
+        <li class="off" id="searchtab"><a href="viewSearch.php">検索</a></li>
+        </ul>
+        </div>
+        </div>
+        <!-- ヘッダ -->
 	</head>
 	<body>
 		<div id="wholewrapper">
@@ -48,4 +70,8 @@
             </form>
         </div>
 	</body>
+	<!-- フッダ -->
+		<div id="footer">
+			&copy; Quintet
+		</div>
 </html>

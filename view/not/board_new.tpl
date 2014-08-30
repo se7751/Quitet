@@ -82,7 +82,7 @@
 		</div>  -->
 		<!-- フッタ -->
 		<div id="footer">
-			&copy; sample
+			&copy; Quintet
 		</div>
 	</body>
 </html>

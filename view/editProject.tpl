@@ -94,7 +94,7 @@
                         </td>
                     </tr>
 
-                    
+
     <tr>
 
 <table>
@@ -116,13 +116,13 @@
         <td align="center">
             マネージャー<br />
             <select name="manager" size="20" multiple>
-                
+
                 {foreach from=$managers item=manager}
                 {if ($manager.name!= "")}
                 <option value="{$manager.user_id}">{$manager.name}
                     {/if}
                 {/foreach}
-                
+
             </select>
         </td>
         <td>
@@ -153,8 +153,8 @@
                 {/foreach}
             </select>
         </td>
-        
-        
+
+
     </tr>
         <tr>
             <td colspan="2" class="right_align">
@@ -164,4 +164,8 @@
     </table>
         </form>
     </body>
+    <!-- フッダ -->
+		<div id="footer">
+			&copy; Quintet
+		</div>
 </html>

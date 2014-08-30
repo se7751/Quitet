@@ -68,9 +68,7 @@
         }
     </script>
 	<body>
-
-
-
+		<div id="forms">
 		<form action="edit.php" id="newProject" method="post">
 			<!-- 編集対象の投稿ID -->
 			<input type="hidden" name="choose"/>
@@ -96,7 +94,7 @@
 						</td>
 					</tr>
 
-					
+
 	<tr>
 
 <table>
@@ -115,7 +113,7 @@
             <select name="manager" size="20" multiple>
             	{foreach from=$managers item=manager}
                 <option value="{$manager.user_id}">{$manager.name}
-                {/foreach}        
+                {/foreach}
             </select>
         </td>
         <td>
@@ -142,8 +140,8 @@
                 {/foreach}
             </select>
         </td>
-        
-   		
+
+
 	</tr>
 		<tr>
 			<td colspan="2" class="right_align">
@@ -152,5 +150,10 @@
 		</tr>
 	</table>
 		</form>
+		</div>
 	</body>
+	<!-- フッダ -->
+		<div id="footer">
+			&copy; Quintet
+		</div>
 </html>

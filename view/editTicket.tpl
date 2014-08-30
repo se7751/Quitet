@@ -158,7 +158,7 @@
                 {/foreach}
             </select>
         </td>
-        
+
    		<script type="text/javascript">
 
    		var element = document.getElementById("selectest");
@@ -250,4 +250,5 @@
         }
         //-->
         </script>
+
 </html>
