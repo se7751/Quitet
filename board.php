@@ -47,6 +47,7 @@ while ( $row = $db->fetch () ) {
 $i = 0;
 // 1プロジェクトに携わるメンバを抽出する処理
 // IDを抽出
+if(!empty($projects)){
 foreach ( $projects as $minipro ) {
 	// ProIDを抽出
 	$cid = $minipro ['project_id'];
@@ -133,23 +134,21 @@ EOT;
 
 	$i ++;
 }
+}
 
 /*
  * echo $projects[$i]['project_id']; $aaa = $projects[0]; var_dump($aaa); echo "ok".$aaa['project_id'];
- */
+ *///追加場所
+if(empty($projects)){
+		$projects [0]['project_id']= "";
+	}
+
 
 // 投稿一覧を表示
 $smarty->assign ( 'role_flag', $_SESSION ['role_flag'] );
 $smarty->assign ( 'userId', $userId );
-if (isset ( $projects )) {
-	$smarty->assign ( 'projects', $projects );
-} else {
-	$projects [0] ['project_id'] = "#";
-	$projects [0] ['title'] = "表示できるプロジェクトがありません";
-	$projects [0] ['body'] = "";
-	$projects [0] ['created'] = "";
-	$smarty->assign ( 'projects', $projects );
-}
+$smarty->assign ( 'projects', $projects );
+
 $smarty->assign ( 'ch_project_title', "　　　　" );
 $smarty->assign ( 'title', "プロジェクト一覧" );
 $smarty->assign ( 'names', $_SESSION ['username'] );
