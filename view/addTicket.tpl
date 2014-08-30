@@ -32,6 +32,7 @@
         <!--iso-->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/i18n/jquery-ui-i18n.min.js"></script>
 	<body></br>
+	<div id="saku">
 		<h1>チケット作成</h1>
 		<form action="excCreateTicket.php" method="post" name="newProject" onSubmit="return check()" enctype="multipart/form-data">
 		<input type="hidden" name="choose"/>
@@ -140,7 +141,7 @@
                 {/foreach}
             </select>
         </td>
-        
+
    		<script type="text/javascript">
 
    		var element = document.getElementById("selectest");
@@ -169,6 +170,7 @@
 		</tr>
 	</table>
 		</form>
+	</div>
 
 
 
