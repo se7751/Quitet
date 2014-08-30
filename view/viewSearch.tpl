@@ -29,12 +29,15 @@
         <!-- ヘッダ -->
     </head>
     <body>
-    <div id="wholewappers">
+    <div id="ken">
         <div id="serch" class="font">
             <form action="viewSearch.php" id="newProject" method="post">
-            <td>検索ワード</th><td><input type="textbox" value="" name="word"></td>
-            <td><input type="submit" value="検索"></td>
+            <table id="kensakutable">
+            <th>検索ワード</th><td><input type="textbox" value="" name="word"></td>
+            <td><input type="submit" value="検索"/></td>
+             </table>
             </form>
+
         </div>
         <div id="serch_label" class="font">
             <div>

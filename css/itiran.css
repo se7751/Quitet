@@ -1,3 +1,4 @@
+
 a{
 	text-decoration: none;
 	color: #8945de
@@ -34,3 +35,17 @@ h5{
 .tiketo_speedy:nth-child(odd){
 	background: #2e0101;
 }
+#restable{
+	width: 40%;
+	margin-left: 30%;
+}
+#serch_label{
+	width: 100%;
+	margin-left: 30%;
+}
+
+#kensakutable{
+	width: 100%;
+	margin-left: 40%;
+}
+
