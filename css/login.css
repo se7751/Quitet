@@ -10,11 +10,10 @@
 .center_align {
 	text-align       : center;
 }
-body{
 
-}
 div#wholewrapper {
-	
+	margin-left:40%;
+	margin-right:40%;
 }
 
 table {

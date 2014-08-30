@@ -24,7 +24,7 @@
         <!-- ヘッダ -->
     </head>
 	<br/><h2></h2>
-
+<body>
 <!-- 進捗率 -->
 	<div id="roadmap">
 		<p>進捗率</p>
@@ -37,47 +37,9 @@
 	</div><br/>
 
 <!-- 絞り込み -->
-	<div id="sibori">
-		<p>・絞り込み</p>
-		<form action=".php" method="post">
-			<input type="hidden" name="id" value="33" />
-			<table>
-					<tr>
-						<th>ステータス</th>
-						<th>優先度</th>
-						<th>期日</th>
-					</tr>
 
-					<tr>
-						<th>
-							<select name="Status1">
-							<option value="Status1">新規</option>
-							<option value="Status2">解決</option>
-							<option value="Status3">フィーバック</option>
-							<option value="Status4">終了</option>
-							<option value="Status5">却下</option>
-							</select>
-						</th>
 
-						<th>
-							<select name="primary1">
-							<option value="primary1">通常</option>
-							<option value="primary2">低</option>
-							<option value="primary3">高</option>
-							<option value="primary4">至急</option>
-							</select>
-						</th>
-
-						<th>
-							<input type="text" name="title" id="title" />
-						</th>
-
-						<th>
-							<BUTTON type="submit">検索</BUTTON>
-						</th>
-			</table>
-
-		<form action="#" method="post">
+		
 			<!-- チケット -->
 			<input type="hidden" name="id" value="33" />
 				<form accept-charset="UTF-8" action="#" method="post"><div style="margin:0;padding:0;display:inline">
@@ -126,8 +88,8 @@
 		<a href="viewTickets.php?project_id={$ch_project_id}&limit=100">100</a>
 	</span>
 </p>
-
-			<!-- フッダ -->
+</body>
+		<!-- フッダ -->
 		<div id="footer">
 			&copy; Quintet
 		</div>

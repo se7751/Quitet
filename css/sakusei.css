@@ -12,18 +12,20 @@ h2{
 	background-color: #faf0e6;
 	border-bottom: medium solid #000000;
 }
-	
+
 #history{
 	width: 55%;
-	float: left;
+
+	float:left;
 	border: 1px solid #000000;
 	background-color: #e0ffff;
 	}
 
 #coment{
+	float:left;
 	height: 30%;
 	width: 30%;
-	float: left;
+
 	border: 1px solid #000000;
 	background-color: #e0ffff;
 	}
@@ -43,7 +45,7 @@ h3{
 #hyouji{
 	height: 100px;
 	}
-	
+
 #option{
 	margin-left: 60%;
 }

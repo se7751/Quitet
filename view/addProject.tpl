@@ -68,7 +68,7 @@
         }
     </script>
 	<body>
-		<div id="forms">
+		<div id="wholewapper">
 		<form action="edit.php" id="newProject" method="post">
 			<!-- 編集対象の投稿ID -->
 			<input type="hidden" name="choose"/>

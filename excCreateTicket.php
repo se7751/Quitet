@@ -59,7 +59,9 @@ $query = sprintf($format,$ticketids[0]['ticket_id'],$tan);
 echo "UPLOAD";
 //ファイルアップロード処理
 if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
-	if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "view/" . $_FILES["upfile"]["name"])) {
+	$str = "view/" . $_FILES["upfile"]["name"];
+	$str = mb_convert_encoding($str, "SJIS", "AUTO");
+	if (move_uploaded_file($_FILES["upfile"]["tmp_name"], $str)) {
 		chmod("view/" . $_FILES["upfile"]["name"], 0644);
 		echo "upload";
 	}

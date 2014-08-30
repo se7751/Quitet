@@ -50,11 +50,11 @@
 
 					<th class="assigned-to">期日:</th>
 					<td class="assigned-to">{$tic.kijitu}</td>
-                    
+
 					<th class="a">担当者:</td>
 					<td class="assigned-to">{$tic.members}</td>
-    
-                    
+
+
 
 					<tr><th class="category">カテゴリー:</th><td class="category">{$tic.category}</td>
 					<tr><th class="fixed-version">ファイル:</th><td class="fixed-version">
@@ -67,7 +67,7 @@
 					{/foreach}
 				</tr>
 			</table></br>
-
+	<div id="eeee">
 	<!-- 概要 -->
 			<div id="gaiyo">
 				<h3>概要</h3>
@@ -79,7 +79,7 @@
 			</div></br></br>
 
 	<!-- 投稿欄 -->
-			<div id="history">
+			<div id="history" >
 				<h3>コメント</h3>
 					<div id="sc">
 						{foreach from=$comments item=com}
@@ -90,20 +90,17 @@
 					{if ($com.file_name != "")}
                     <a href="#" class="delete" onclick="del_confirm('delete.php?ticket_id={$ticket_id}&file_name={$com.file_name}&comment_id={$com.comennt_id}');">[削除]</a>
 					{/if}<br/><a href="#" class="delete" onclick="del_confirm('delete.php?ticket_id={$ticket_id}&comment_id={$com.comennt_id}');">[コメントを削除]</a>
-						
+
                 <hr>
 						{/if}
 						{/foreach}
 					</div>
-				<!-- フッダ -->
-					<div id="footer">
-						&copy; Quintet
-					</div>
+
 			</div>
 
 
 	<!-- コメント投稿 -->
-			<div id="coment">
+			<div id="coment" >
 				<h3>コメント投稿</h3>
 					<div id="kome">
                         <form action="excAddComments.php" method="post" enctype="multipart/form-data">
@@ -114,6 +111,11 @@
                         </form>
 					</div>
 			</div>
-		
+			</div>
+<!-- フッダ -->
+					<div id="footer">
+						&copy; Quintet
+					</div>
 	</body>
+
 </html>
